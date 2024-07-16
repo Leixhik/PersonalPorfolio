@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Arrays/Arrays.iml" filepath="$PROJECT_DIR$/Arrays/Arrays.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Condicionales/Condicionales.iml" filepath="$PROJECT_DIR$/Condicionales/Condicionales.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Entrada/Entrada.iml" filepath="$PROJECT_DIR$/Entrada/Entrada.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HolaMundo/HolaMundo.iml" filepath="$PROJECT_DIR$/HolaMundo/HolaMundo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JAVA TRABAJO.iml" filepath="$PROJECT_DIR$/JAVA TRABAJO.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Matrices/Matrices.iml" filepath="$PROJECT_DIR$/Matrices/Matrices.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Proyecto Algoritmos computacionales/Proyecto Algoritmos computacionales.iml" filepath="$PROJECT_DIR$/Proyecto Algoritmos computacionales/Proyecto Algoritmos computacionales.iml" />
+    </modules>
+  </component>
+</project>
