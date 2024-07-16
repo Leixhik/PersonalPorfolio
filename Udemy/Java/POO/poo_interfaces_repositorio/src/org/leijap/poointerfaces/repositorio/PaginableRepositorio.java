@@ -1,3 +1,6 @@
+/* Esta interfaz proporciona métodos para paginar la lista de clientes, es decir,
+dividir la lista en sublistas más pequeñas según un rango específico*/
+
 package org.leijap.poointerfaces.repositorio;
 
 import org.leijap.poointerfaces.modelo.Cliente;
