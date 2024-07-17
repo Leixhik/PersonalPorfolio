@@ -77,6 +77,7 @@ public class ClienteListRepositorio implements CrudRepositorio,
         return dataSource.subList(desde, hasta);
     }
 
+    //Comparacion de clientes
     public static int ordenar(String campo, Cliente a, Cliente b) {
         int resultado = 0;
         switch (campo){
