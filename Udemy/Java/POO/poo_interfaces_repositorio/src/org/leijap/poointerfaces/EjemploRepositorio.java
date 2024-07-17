@@ -37,8 +37,10 @@ public class EjemploRepositorio {
         Cliente bea = repo.porId(2);
         System.out.println(bea);
 
+        System.out.println("=============");
+
         ((OrdenableRepositorio)repo)
-                .listar("nombre", Direccion.ASC)
+                .listar("nombre", Direccion.DESC)
                 .forEach(System.out::println);
 
         System.out.println("===== eliminar =====");
