@@ -24,9 +24,20 @@ public class EjemploGenericos {
         clientesLista.forEach(System.out::println);
         enterosLista.forEach(System.out::println);
 
+        List<String> nombres = fromArrayToList(new String[]{"Andrés", "Pepe",
+        "Luci", "Bea", "John"}, enterosArreglo);
+        nombres.forEach(System.out::println);
+
     }
 
     public static <T> List<T> fromArrayToList(T[] c){
+        return Arrays.asList(c);
+    }
+
+    public static <T, G> List<T> fromArrayToList(T[] c, G[] x){
+        for(G elemento: x){
+            System.out.println(elemento);
+        }
         return Arrays.asList(c);
     }
 }
