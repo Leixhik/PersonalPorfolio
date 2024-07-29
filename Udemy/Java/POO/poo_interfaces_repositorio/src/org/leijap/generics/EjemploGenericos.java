@@ -1,9 +1,11 @@
 package org.leijap.generics;
 
 import org.leijap.poointerfaces.modelo.Cliente;
+import org.leijap.poointerfaces.modelo.ClientePremium;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 public class EjemploGenericos {
@@ -28,9 +30,17 @@ public class EjemploGenericos {
         "Luci", "Bea", "John"}, enterosArreglo);
         nombres.forEach(System.out::println);
 
+        List<ClientePremium> clientePremiumList = fromArrayToList(
+                new ClientePremium[]{new ClientePremium("Paco", "Fernandez")});
     }
 
     public static <T> List<T> fromArrayToList(T[] c){
+        return Arrays.asList(c);
+    }
+    public static <T extends Number> List<T> fromArrayToList(T[] c){
+        return Arrays.asList(c);
+    }
+    public static <T extends Cliente & Comparable<T>> List<T> fromArrayToList(T[] c){
         return Arrays.asList(c);
     }
 
