@@ -17,8 +17,10 @@ public class EjemploGenericos {
         Cliente andres = clientes.iterator().next();
 
         Cliente[] clientesArreglo = {new Cliente("Luci", "Martinez"),
-                new Cliente("Andres", "Guzmán")};
-        Integer[] enterosArreglo = {1, 2, 3};
+                new Cliente("Andres", "Guzmán")}; //Crear varios clientes por medio de un Array.
+
+        Integer[] enterosArreglo = {1, 2, 3}; // Cuando se agrega el [] después del tipo de objeto,
+                                                // quiere decir que se ingresarán varios valores, no sólo uno.
 
         List<Cliente> clientesLista = fromArrayToList(clientesArreglo);
         List<Integer> enterosLista = fromArrayToList(enterosArreglo);
@@ -32,15 +34,20 @@ public class EjemploGenericos {
 
         List<ClientePremium> clientePremiumList = fromArrayToList(
                 new ClientePremium[]{new ClientePremium("Paco", "Fernandez")});
+
+        imprimirClientes(clientes);
+        imprimirClientes(clientesLista);
+        imprimirClientes(clientePremiumList);
+
     }
 
     public static <T> List<T> fromArrayToList(T[] c){
-        return Arrays.asList(c);
+        return Arrays.asList(c);/*Este método convierte un array de cualquier tipo T a una lista del mismo tipo T.*/
     }
     public static <T extends Number> List<T> fromArrayToList(T[] c){
-        return Arrays.asList(c);
+        return Arrays.asList(c); /*restricción: solo puede trabajar con arrays de tipos que extiendan Number (como Integer, Double, Float, etc.).*/
     }
-    public static <T extends Cliente & Comparable<T>> List<T> fromArrayToList(T[] c){
+    public static <T extends Cliente> List<T> fromArrayToList(T[] c){
         return Arrays.asList(c);
     }
 
@@ -49,5 +56,9 @@ public class EjemploGenericos {
             System.out.println(elemento);
         }
         return Arrays.asList(c);
+    }
+
+    public static void imprimirClientes(List<? extends Cliente> clientes){
+        clientes.forEach(System.out::println);/*La expresión lambda System.out::println proporciona una forma concisa de imprimir cada elemento.*/
     }
 }
