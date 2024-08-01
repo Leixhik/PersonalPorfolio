@@ -1,7 +1,5 @@
 package org.leijap.poointerfaces.repositorio;
 
-public interface FullRepo extends OrdenableRepositorio,
-        PaginableRepositorio, CrudRepositorio, ContableRepositorio{
-
-
+public interface FullRepo<T> extends OrdenableRepositorio<T>,
+        PaginableRepositorio<T>, CrudRepositorio<T>, ContableRepositorio{
 }

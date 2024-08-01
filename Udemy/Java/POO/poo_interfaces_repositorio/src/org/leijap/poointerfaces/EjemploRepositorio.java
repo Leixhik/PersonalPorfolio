@@ -8,7 +8,7 @@ import java.util.List;
 public class EjemploRepositorio {
     public static void main(String[] args) {
 
-        FullRepo repo = new ClienteListRepositorio();
+        FullRepo<Cliente> repo = new ClienteListRepositorio();
         repo.crear(new Cliente("Jano", "Pérez"));
         repo.crear(new Cliente("Bea", "Gonzáles"));
         repo.crear(new Cliente("Luci", "Martínez"));
