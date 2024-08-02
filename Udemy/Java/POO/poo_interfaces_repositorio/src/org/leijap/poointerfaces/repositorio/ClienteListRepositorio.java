@@ -7,20 +7,6 @@ import java.util.List;
 
 public class ClienteListRepositorio extends AbstractaListRepositorio<Cliente>{ //Implementación de Multiples Interfaces
 
-    /*Busca un cliente en la lista por su id.
-    Usa un bucle for para recorrer la lista y devolver el cliente que coincide con el id.*/
-    @Override
-    public Cliente porId(Integer id) {
-        Cliente resultado = null;
-        for(Cliente cli: dataSource) {
-            if(cli.getId() != null && cli.getId().equals(id)) { //Validar que el id del cliente no sea null
-                resultado = cli;
-                break;
-            }
-        }
-        return resultado;
-    }
-
     /*modificar el cliente proporcionado a la lista dataSource.*/
     @Override
     public void editar(Cliente cliente) {

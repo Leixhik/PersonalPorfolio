@@ -4,34 +4,19 @@ package org.leijap.poointerfaces.modelo;
 
 import java.util.Objects;
 
-public class Cliente {
+public class Cliente extends BaseEntity{
 
     // Atributos
-    private Integer id;
     private String nombre;
     private String apellido;
-    private static int ultimoId;
-
-    // Contructores
-    public Cliente() {
-        this.id = ++ ultimoId; //Incrementa el ID para asignar valor ++ al nuevo id
-    }
 
     public Cliente(String nombre, String apellido) {
-        this();
+        super(); //Invoca al Constructor Vacío de la clase Padre
         this.nombre = nombre;
         this.apellido = apellido;
     }
 
     // Getter and Setter
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
     public String getNombre() {
         return nombre;
     }

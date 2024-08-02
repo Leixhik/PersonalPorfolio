@@ -1,11 +1,12 @@
 package org.leijap.poointerfaces.repositorio;
 
+import org.leijap.poointerfaces.modelo.BaseEntity;
 import org.leijap.poointerfaces.modelo.Cliente;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class AbstractaListRepositorio<T> implements FullRepo<T>{ //Implementación de Multiples Interfaces
+public abstract class AbstractaListRepositorio<T extends BaseEntity> implements FullRepo<T>{ //Implementación de Multiples Interfaces
 
     protected List<T> dataSource;
 
@@ -20,18 +21,18 @@ public abstract class AbstractaListRepositorio<T> implements FullRepo<T>{ //Impl
     }
 
     /*Busca un cliente en la lista por su id.
-    Usa un bucle for para recorrer la lista y devolver el cliente que coincide con el id.
+    Usa un bucle for para recorrer la lista y devolver el cliente que coincide con el id.*/
     @Override
-    public Cliente porId(Integer id) {
-        Cliente resultado = null;
-        for(Cliente cli: dataSource) {
+    public T porId(Integer id) {
+        T resultado = null;
+        for(T cli: dataSource) {
             if(cli.getId() != null && cli.getId().equals(id)) { //Validar que el id del cliente no sea null
                 resultado = cli;
                 break;
             }
         }
         return resultado;
-    }*/
+    }
 
     /*añadir el cliente proporcionado a la lista dataSource.*/
     @Override
