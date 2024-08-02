@@ -2,6 +2,7 @@ package org.leijap.poointerfaces;
 
 import org.leijap.poointerfaces.modelo.Cliente;
 import org.leijap.poointerfaces.repositorio.*;
+import org.leijap.poointerfaces.repositorio.lista.ClienteListRepositorio;
 
 import java.util.List;
 

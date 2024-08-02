@@ -10,8 +10,8 @@ import java.util.List;
 public interface CrudRepositorio<T> {
     List<T> listar(); //Devuelve lista de todos los clientes
     T porId(Integer id); // Devuelve un cliente qque coincida por el id
-    void crear(T cliente); // Crea un nuevo cliente
-    void editar(T cliente); //Modificar cliente en existencia
+    void crear(T t); // Crea un nuevo cliente
+    void editar(T t); //Modificar cliente en existencia
     void eliminar(Integer id); //Elimina a un cliente por su id
 }
 

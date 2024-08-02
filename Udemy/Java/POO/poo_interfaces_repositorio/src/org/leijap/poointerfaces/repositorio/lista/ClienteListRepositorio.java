@@ -1,11 +1,13 @@
-package org.leijap.poointerfaces.repositorio;
+package org.leijap.poointerfaces.repositorio.lista;
 
 import org.leijap.poointerfaces.modelo.Cliente;
+import org.leijap.poointerfaces.repositorio.AbstractaListRepositorio;
+import org.leijap.poointerfaces.repositorio.Direccion;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ClienteListRepositorio extends AbstractaListRepositorio<Cliente>{ //Implementación de Multiples Interfaces
+public class ClienteListRepositorio extends AbstractaListRepositorio<Cliente> { //Implementación de Multiples Interfaces
 
     /*modificar el cliente proporcionado a la lista dataSource.*/
     @Override
@@ -20,14 +22,14 @@ public class ClienteListRepositorio extends AbstractaListRepositorio<Cliente>{ /
     public List<Cliente> listar(String campo, Direccion dir) {
         List<Cliente> listaOrdenada = new ArrayList<>(this.dataSource);
         listaOrdenada.sort((a, b) -> {
-                int resultado = 0;
-                if (dir == Direccion.ASC) {
-                   resultado = ordenar(campo, a, b);
-                } else if (dir == Direccion.DESC) {
-                   resultado = ordenar(campo, b, a);
-                }
-                return resultado;
-             });
+            int resultado = 0;
+            if (dir == Direccion.ASC) {
+                resultado = ordenar(campo, a, b);
+            } else if (dir == Direccion.DESC) {
+                resultado = ordenar(campo, b, a);
+            }
+            return resultado;
+        });
         return listaOrdenada;
     }
 

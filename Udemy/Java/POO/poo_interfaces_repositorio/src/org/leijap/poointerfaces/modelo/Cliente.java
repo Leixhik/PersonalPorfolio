@@ -40,18 +40,4 @@ public class Cliente extends BaseEntity{
                 ", apellido='" + apellido + '\'';
     }
 
-
-    //Equals y hasCode que Comparan todos los objetos
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true; //Si son iguales retorna true
-        if (o == null || getClass() != o.getClass()) return false; // Si son objetos diferentes de tipo cliente etc, return false
-        Cliente cliente = (Cliente) o; /*Si todo se cumple comparará los clientes*/
-        return Objects.equals(id, cliente.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hashCode(id);
-    }
 }
