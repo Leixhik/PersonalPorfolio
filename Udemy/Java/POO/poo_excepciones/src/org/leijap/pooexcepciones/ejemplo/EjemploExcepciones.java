@@ -5,18 +5,20 @@ import javax.swing.*;
 public class EjemploExcepciones {
     public static void main(String[] args) {
 
+        Calculadora cal = new Calculadora();
         String valor = JOptionPane.showInputDialog("Ingresa un entero: ");
         int divisor;
+        double division;
 
         try {
             divisor = Integer.parseInt(valor);
-            int division = 10/divisor;
+            division = cal.dividir(10, divisor);
             System.out.println(division);
         } catch (NumberFormatException e) {
             System.out.println("Se detectó una excepción: Por favor ingresa un valor numérico." + e.getMessage());
             main(args);
         }
-        catch (ArithmeticException e) {
+        catch (DivisionPorZeroException e) {
             System.out.println("Capturamos la excepcion en tiempo de ejecución: " + e.getMessage());
             main(args);
         } finally {
@@ -25,4 +27,5 @@ public class EjemploExcepciones {
         System.out.println("Continuamos con la ejecución");
 
     }
+
 }
