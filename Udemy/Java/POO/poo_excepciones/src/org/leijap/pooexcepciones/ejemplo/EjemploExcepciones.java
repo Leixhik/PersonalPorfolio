@@ -6,17 +6,16 @@ public class EjemploExcepciones {
     public static void main(String[] args) {
 
         Calculadora cal = new Calculadora();
-        String valor = JOptionPane.showInputDialog("Ingresa un entero: ");
-        int divisor;
-        double division;
+        String numerador = JOptionPane.showInputDialog("Ingresa un entero numerador: ");
+        String denominador = JOptionPane.showInputDialog("Ingresa un entero denominador: ");
 
         try {
-            divisor = Integer.parseInt(valor);
-            division = cal.dividir(10, divisor);
-            System.out.println(division);
-        } catch (NumberFormatException e) {
-            System.out.println("Se detectó una excepción: Por favor ingresa un valor numérico." + e.getMessage());
-            main(args);
+            double division2 = cal.dividir(numerador, denominador);
+            System.out.println("Division 2: " + division2);
+        }
+        catch (FormatoNumeroException e){
+            System.out.println("¡Se detectó una excepción! Ingrese un número válido: " + e.getMessage());
+            e.printStackTrace(System.out);
         }
         catch (DivisionPorZeroException e) {
             System.out.println("Capturamos la excepcion en tiempo de ejecución: " + e.getMessage());
