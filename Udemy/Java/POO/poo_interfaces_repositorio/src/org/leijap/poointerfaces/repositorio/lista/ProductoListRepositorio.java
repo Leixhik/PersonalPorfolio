@@ -4,6 +4,7 @@ import org.leijap.poointerfaces.modelo.Cliente;
 import org.leijap.poointerfaces.modelo.Producto;
 import org.leijap.poointerfaces.repositorio.AbstractaListRepositorio;
 import org.leijap.poointerfaces.repositorio.Direccion;
+import org.leijap.poointerfaces.repositorio.excepciones.LecturaAccesoDatoException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +12,7 @@ import java.util.List;
 public class ProductoListRepositorio extends AbstractaListRepositorio<Producto> {
 
     @Override
-    public void editar(Producto producto) {
+    public void editar(Producto producto) throws LecturaAccesoDatoException {
         Producto p = porId(producto.getId());
         p.setDescripcion(producto.getDescripcion());
         p.setPrecio(producto.getPrecio());

@@ -4,6 +4,8 @@ import org.leijap.poointerfaces.modelo.Cliente;
 import org.leijap.poointerfaces.modelo.Producto;
 import org.leijap.poointerfaces.repositorio.Direccion;
 import org.leijap.poointerfaces.repositorio.FullRepo;
+import org.leijap.poointerfaces.repositorio.excepciones.AccesoDatoException;
+import org.leijap.poointerfaces.repositorio.excepciones.LecturaAccesoDatoException;
 import org.leijap.poointerfaces.repositorio.lista.ClienteListRepositorio;
 import org.leijap.poointerfaces.repositorio.lista.ProductoListRepositorio;
 
@@ -12,6 +14,7 @@ import java.util.List;
 public class EjemploRepositorioProducto {
     public static void main(String[] args) {
 
+        try {
         FullRepo<Producto> repo = new ProductoListRepositorio();
         repo.crear(new Producto("mesa", 50.52));
         repo.crear(new Producto("silla", 18));
@@ -52,5 +55,14 @@ public class EjemploRepositorioProducto {
 
         System.out.println("\n======= Total========");
         System.out.println("Total registros: " + repo.total());
+    } catch (
+    LecturaAccesoDatoException e){
+        System.out.println(e.getMessage());
+        e.printStackTrace();
+    } catch (
+    AccesoDatoException e){
+        System.out.println(e.getMessage());
+        e.printStackTrace();
+    }
     }
 }

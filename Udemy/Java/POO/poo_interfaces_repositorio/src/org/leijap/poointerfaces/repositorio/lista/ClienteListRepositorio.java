@@ -3,6 +3,7 @@ package org.leijap.poointerfaces.repositorio.lista;
 import org.leijap.poointerfaces.modelo.Cliente;
 import org.leijap.poointerfaces.repositorio.AbstractaListRepositorio;
 import org.leijap.poointerfaces.repositorio.Direccion;
+import org.leijap.poointerfaces.repositorio.excepciones.LecturaAccesoDatoException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +12,7 @@ public class ClienteListRepositorio extends AbstractaListRepositorio<Cliente> { 
 
     /*modificar el cliente proporcionado a la lista dataSource.*/
     @Override
-    public void editar(Cliente cliente) {
+    public void editar(Cliente cliente) throws LecturaAccesoDatoException {
         Cliente c = this.porId(cliente.getId());
         c.setNombre(cliente.getNombre()); //Set para modificar y Get para agregar el nombre almacenado en el cliente.getID
         c.setApellido(cliente.getApellido()); // ""...
