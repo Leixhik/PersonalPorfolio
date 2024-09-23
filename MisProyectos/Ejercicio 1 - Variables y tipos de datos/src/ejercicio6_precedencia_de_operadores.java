@@ -4,7 +4,6 @@ public class ejercicio6_precedencia_de_operadores {
     resultados. (entender cómo Java evalúa expresiones con múltiples operadores.)
     */
     public static void main(String[] args) {
-
         int a=10, b=15, c=20, d=25;
         System.out.println(a + b - c * d / a);
     }
