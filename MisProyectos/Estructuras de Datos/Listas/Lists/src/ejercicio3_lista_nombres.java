@@ -7,7 +7,7 @@ public class ejercicio3_lista_nombres {
         List <String> nombres = new ArrayList<>();
 
         String entrada;
-        Boolean continuar = true;
+        boolean continuar = true;
 
         while(continuar){
             System.out.println("Ingresa un elemento ('salir' para terminar): ");
