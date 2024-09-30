@@ -5,6 +5,7 @@ import org.leijap.poointerfaces.repositorio.*;
 import org.leijap.poointerfaces.repositorio.excepciones.AccesoDatoException;
 import org.leijap.poointerfaces.repositorio.excepciones.EscrituraAccesoDatoException;
 import org.leijap.poointerfaces.repositorio.excepciones.LecturaAccesoDatoException;
+import org.leijap.poointerfaces.repositorio.excepciones.RegistroDuplicadoAccesoDatoException;
 import org.leijap.poointerfaces.repositorio.lista.ClienteListRepositorio;
 
 import java.util.List;
@@ -17,9 +18,11 @@ public class EjemploRepositorio {
             repo.crear(new Cliente("Jano", "Pérez"));
             repo.crear(new Cliente("Bea", "Gonzáles"));
             repo.crear(new Cliente("Luci", "Martínez"));
-            repo.crear(new Cliente("Andres", "Guzmán"));
+            Cliente andres = new Cliente("Andrés", "Guzmán");
+            repo.crear(andres);
+            repo.crear(andres);
 
-            repo.crear(null);
+            //repo.crear(null);
 
             List<Cliente> clientes = repo.listar();
             clientes.forEach(System.out::println);
@@ -41,7 +44,7 @@ public class EjemploRepositorio {
             Cliente beaActualizar = new Cliente("Bea", "Mena");
             beaActualizar.setId(2);
             repo.editar(beaActualizar);
-            Cliente bea = repo.porId(10);
+            Cliente bea = repo.porId(2 );
             System.out.println(bea);
 
             System.out.println("=============");
@@ -55,6 +58,10 @@ public class EjemploRepositorio {
 
             System.out.println("======= Total========");
             System.out.println("Total registros: " + repo.total());
+        }
+        catch (RegistroDuplicadoAccesoDatoException e){
+            System.out.println("Registo duplicado: "+ e.getMessage());
+            e.printStackTrace();
         }
         catch (LecturaAccesoDatoException e){
             System.out.println("Lectura:  " + e.getMessage());
