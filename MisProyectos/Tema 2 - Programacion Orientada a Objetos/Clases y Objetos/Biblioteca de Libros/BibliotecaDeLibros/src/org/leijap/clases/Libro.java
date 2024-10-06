@@ -7,7 +7,9 @@ public class Libro {
     private int añoPublicacion;
     private String isbn;
 
-    //Métodos
+    private boolean prestado;
+
+    // Constructor.
     public Libro(String titulo, String autor, int añoPublicacion, String isbn) {
         this.titulo = titulo;
         this.autor = autor;
@@ -15,6 +17,28 @@ public class Libro {
         this.isbn = isbn;
     }
 
+    // Métodos Préstamo.
+    public void prestar(){
+        prestado = true;
+        System.out.println("Libro prestado correctamente.");
+    }
+    public void devolver(){
+        prestado = false;
+        System.out.println("Libro devuelto correctamente");
+    }
+    public boolean estaPrestado(){
+        return prestado;
+    }
+
+    // Método Mostrar Información.
+    public void mostrarInformacion(){
+        System.out.println("Libro '" + titulo
+                + "'\nAutor: " + autor
+                + "\nAño de Publicación: "+ añoPublicacion
+                +  "\nISBN: " + isbn);
+    }
+
+    // **** Getters & Setters
     public String getTitulo() {
         return titulo;
     }
@@ -45,20 +69,5 @@ public class Libro {
 
     public void setIsbn(String isbn) {
         this.isbn = isbn;
-    }
-
-    public void prestar(){
-        System.out.println("Prestando Libro");
-    }
-
-    public void devolver(){
-        System.out.println("Devolviendo Libro");
-    }
-
-    public void mostrarInformacion(){
-        System.out.println("Libro '" + titulo
-                        + "' \nAutor: " + autor
-                        + "\nAño de Publicación: "+ añoPublicacion
-                        +  "\nISBN: " + isbn);
     }
 }
