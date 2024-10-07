@@ -7,7 +7,7 @@ public class Libro {
     private int añoPublicacion;
     private String isbn;
 
-    private boolean prestado;
+    private static boolean prestado;
 
     // Constructor.
     public Libro(String titulo, String autor, int añoPublicacion, String isbn) {
@@ -26,7 +26,7 @@ public class Libro {
         prestado = false;
         System.out.println("Libro devuelto correctamente");
     }
-    public boolean estaPrestado(){
+    public static boolean estaPrestado(){
         return prestado;
     }
 

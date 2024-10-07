@@ -18,7 +18,7 @@ public class Biblioteca {
     // Busqueda de libro por titulo
     public Libro buscarLibroPorTitulo(String titulo){
         for (Libro libro : libros){
-            if (libro.getTitulo().equals(titulo)){
+            if (libro.getTitulo().equalsIgnoreCase(titulo)){
                 return libro;
             }
         }
@@ -39,4 +39,21 @@ public class Biblioteca {
             System.out.println("Libro no encontrado.");
         }
     }
+    // Devolver Libro (pendiente)
+    public void devolverLibro(String titulo){
+        Libro libro = buscarLibroPorTitulo(titulo);
+        if (libro != null){
+            if (!Libro.estaPrestado()){
+                libro.devolver();
+                System.out.println("Libro devuelto correctamente.");
+            }else {
+                System.out.println("El libro ya está prestado");
+            }
+        }else {
+            System.out.println("Libro no encontrado");
+        }
+    }
+
+    // Mostrar Catálogo(pendiente)
+
 }
