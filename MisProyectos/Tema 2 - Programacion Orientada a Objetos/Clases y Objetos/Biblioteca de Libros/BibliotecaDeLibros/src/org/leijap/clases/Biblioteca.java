@@ -55,5 +55,11 @@ public class Biblioteca {
     }
 
     // Mostrar Catálogo(pendiente)
-
+    public void mostrarCatalogo(){
+        System.out.println("-----------------");
+        System.out.println("Catálogo de la biblioteca");
+        for (Libro libro : libros){ /*recorre cada elemento (libro) dentro del arrayList.*/
+            libro.mostrarInformacion(); /*para cada libro , se llama al metodo mostrar informacion.*/
+        }
+    }
 }

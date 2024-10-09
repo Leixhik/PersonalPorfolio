@@ -22,6 +22,10 @@ public class EjemploBiblioteca {
         }
 
         // Préstamo de Libro
+        biblioteca.prestarLibro("1984");
+        biblioteca.devolverLibro("El señor de los anillos");
 
+        //Mostrar Catálogo
+        biblioteca.mostrarCatalogo();
     }
 }

@@ -20,22 +20,26 @@ public class Libro {
     // Métodos Préstamo.
     public void prestar(){
         prestado = true;
-        System.out.println("Libro prestado correctamente.");
     }
     public void devolver(){
         prestado = false;
-        System.out.println("Libro devuelto correctamente");
     }
     public static boolean estaPrestado(){
         return prestado;
     }
 
-    // Método Mostrar Información.
+    // Metodo Mostrar Información.
     public void mostrarInformacion(){
         System.out.println("Libro '" + titulo
                 + "'\nAutor: " + autor
                 + "\nAño de Publicación: "+ añoPublicacion
                 +  "\nISBN: " + isbn);
+        if (prestado){
+            System.out.println("Estado: Prestado");
+        }else {
+            System.out.println("Estado: Disponible");
+        }
+        System.out.println("-----------------");
     }
 
     // **** Getters & Setters
