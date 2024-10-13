@@ -20,5 +20,8 @@ public class EjemploHashSetAgregar {
         boolean b = hs.add("tres");
         System.out.println("permite elementos duplicados = " + b);
         System.out.println(hs);
+
+
+
     }
 }
