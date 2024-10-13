@@ -43,11 +43,11 @@ public class Biblioteca {
     public void devolverLibro(String titulo){
         Libro libro = buscarLibroPorTitulo(titulo);
         if (libro != null){
-            if (!Libro.estaPrestado()){
+            if (Libro.estaPrestado()){
                 libro.devolver();
                 System.out.println("Libro devuelto correctamente.");
-            }else {
-                System.out.println("El libro ya está prestado");
+            } else{
+                System.out.println("El libro ya estaba disponible.");
             }
         }else {
             System.out.println("Libro no encontrado");
