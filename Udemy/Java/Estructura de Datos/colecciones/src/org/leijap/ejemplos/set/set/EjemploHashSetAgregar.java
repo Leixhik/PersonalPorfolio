@@ -1,4 +1,4 @@
-package org.leijap.ejemplos.set;
+package org.leijap.ejemplos.set.set;
 
 import java.util.*;
 
