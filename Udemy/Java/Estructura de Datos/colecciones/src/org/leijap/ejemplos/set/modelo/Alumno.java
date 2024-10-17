@@ -2,13 +2,13 @@ package org.leijap.ejemplos.set.modelo;
 
 public class Alumno implements Comparable<Alumno>{
     private String nombre;
-    private int nota;
+    private Integer nota;
 
     public Alumno() {
 
     }
 
-    public Alumno(String nombre, int nota) {
+    public Alumno(String nombre, Integer nota) {
         this.nombre = nombre;
         this.nota = nota;
     }
@@ -21,11 +21,11 @@ public class Alumno implements Comparable<Alumno>{
         this.nombre = nombre;
     }
 
-    public int getNota() {
+    public Integer getNota() {
         return nota;
     }
 
-    public void setNota(int nota) {
+    public void setNota(Integer nota) {
         this.nota = nota;
     }
 
@@ -40,7 +40,7 @@ public class Alumno implements Comparable<Alumno>{
             return 0;
         }
         return this.nombre.compareTo(a.nombre);*/
-        if (this.nota == a.nota){
+       /* if (this.nota.equals(a.nota)){
             return 0;
         }
         if (this.nota > a.nota){
@@ -48,5 +48,10 @@ public class Alumno implements Comparable<Alumno>{
         }else {
             return -1;
         }
+        */
+        if (this.nota == null) {
+            return 0;
+        }
+        return this.nota.compareTo(a.nota);
     }
 }
