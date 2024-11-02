@@ -3,6 +3,7 @@ package org.leijap.ejemplos.set.set;
 import org.leijap.ejemplos.set.modelo.Alumno;
 
 import java.util.*;
+import static java.util.Comparator.comparing;
 
 public class EjemploListComparableComparator {
     public static void main(String[] args) {
@@ -23,7 +24,7 @@ public class EjemploListComparableComparator {
 
         // sa.sort((a, b) -> a.getNota().compareTo(b.getNota()));
 
-        sa.sort(Comparator.comparing(Alumno::getNota).reversed()); // Aquí solo es necesario usar el parámetro que deseas getNombre, getNota, etc.
+        sa.sort(comparing(Alumno::getNota).reversed()); // Aquí solo es necesario usar el parámetro que deseas getNombre, getNota, etc.
 
         // System.out.println(sa);
 
