@@ -1,4 +1,4 @@
-package org.leijap.ejemplos.set.set;
+package org.leijap.ejemplos.set.list;
 
 import org.leijap.ejemplos.set.modelo.Alumno;
 

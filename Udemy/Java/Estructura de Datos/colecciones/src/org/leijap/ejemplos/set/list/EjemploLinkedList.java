@@ -1,10 +1,8 @@
-package org.leijap.ejemplos.set.set;
+package org.leijap.ejemplos.set.list;
 
 import org.leijap.ejemplos.set.modelo.Alumno;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.List;
 import java.util.ListIterator;
 
 public class EjemploLinkedList {
