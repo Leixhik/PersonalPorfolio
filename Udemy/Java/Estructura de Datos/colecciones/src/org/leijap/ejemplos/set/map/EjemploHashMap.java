@@ -1,14 +1,11 @@
 package org.leijap.ejemplos.set.map;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class EjemploHashMap {
     public static void main(String[] args) {
 
-        Map<String, String> persona = new HashMap<>();
+        Map<String, Object> persona = new HashMap<>();
         System.out.println("contiene elementos = " + !persona.isEmpty());
         persona.put(null, "1234");
         persona.put(null, "12345");
@@ -16,19 +13,37 @@ public class EjemploHashMap {
         persona.put("apellido", "Doe");
         persona.put("apellidoPaterno", "Doe");
         persona.put("email", "john.doe@email.com");
-        persona.put("edad" , "30");
+        persona.put("edad" , 30);
+
+        Map<String, String> direccion = new HashMap<>();
+        direccion.put("pais", "USA");
+        direccion.put("estado", "California");
+        direccion.put("ciudad", "Santa Barbara");
+        direccion.put("calle", "One Street");
+        direccion.put("numero", "120");
+
+        persona.put("direccion", direccion);
+
 
         System.out.println("persona: " + persona);
 
         // Métodos Importantes de HashMap:
 
-        String nombre = persona.get("nombre"); // Obtener value del Key nombre
+        String nombre = (String) persona.get("nombre"); // Obtener value del Key nombre
         System.out.println("nombre: " + nombre);
-        String apellido = persona.get("apellido"); // Obtener value del Key apellido
+        String apellido = (String) persona.get("apellido"); // Obtener value del Key apellido
         System.out.println("apellido: " + apellido);
 
+        Map<String, String> direccionPersona = (Map<String, String>) persona.get("direccion");
+        String pais = direccionPersona.get("pais");
+        String ciudad = direccionPersona.get("ciudad");
+        String barrio = direccionPersona.getOrDefault("barrio", "La playa");
+        System.out.println("El pais de " + nombre + " es: " + pais);
+        System.out.println("La ciudad de " + nombre + " es: " + ciudad);
+        System.out.println("El barrio de  " + nombre + " es: " + barrio);
+
         System.out.println("========================");
-        String apellidoPaterno = persona.remove("apellidoPaterno"); // apellidoPaterno fue removido
+        String apellidoPaterno = (String) persona.remove("apellidoPaterno"); // apellidoPaterno fue removido
         boolean b = persona.remove("apellidoPaterno", "Roe"); // No se puede remover porque no hay un Key, Value preciso.
         System.out.println("eliminado = " + b);
         System.out.println("persona = " + persona);
@@ -43,8 +58,8 @@ public class EjemploHashMap {
 
         System.out.println("======================== values");
         // El orden del Collection es como el del Set.
-        Collection<String> valores = persona.values(); // Mete lo que hay de Values de Personas en el Collection valores.
-        for(String v : valores){
+        Collection<Object> valores = persona.values(); // Mete lo que hay de Values de Personas en el Collection valores.
+        for(Object v : valores){
             System.out.println("v = " +v);
         }
 
@@ -56,13 +71,13 @@ public class EjemploHashMap {
 
         // Iteraciones por for each
         System.out.println("======================== entrySet");
-        for (Map.Entry<String, String> par : persona.entrySet()){
+        for (Map.Entry<String, Object> par : persona.entrySet()){
             System.out.println(par.getKey() + " => " + par.getValue());
         }
 
         System.out.println("======================== keySet");
         for (String llave : persona.keySet()){
-            String valor = persona.get(llave);
+            Object valor = persona.get(llave);
             System.out.println(llave + " => " + valor);
         }
 
