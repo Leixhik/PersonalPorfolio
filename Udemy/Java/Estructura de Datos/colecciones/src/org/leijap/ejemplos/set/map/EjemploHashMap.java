@@ -72,13 +72,34 @@ public class EjemploHashMap {
         // Iteraciones por for each
         System.out.println("======================== entrySet");
         for (Map.Entry<String, Object> par : persona.entrySet()){
-            System.out.println(par.getKey() + " => " + par.getValue());
+            Object valor = par.getValue();
+            if (valor instanceof Map){
+                String nom = (String) persona.get("nombre");
+                Map<String, String> direccionMap = (Map<String, String>) valor;
+                for (Map.Entry<String, String> parDir : direccionMap.entrySet()){
+                    System.out.println(parDir.getKey() + " => " + parDir.getValue());
+                }
+            } else {
+                System.out.println(par.getKey() + " => " + valor);
+            }
         }
 
-        System.out.println("======================== keySet");
+        System.out.println("======================== keySet 2");
         for (String llave : persona.keySet()){
             Object valor = persona.get(llave);
-            System.out.println(llave + " => " + valor);
+            if (valor instanceof Map){
+                String nom = (String) persona.get("nombre");
+                Map<String, String> direccionMap = (Map<String, String>) valor;
+                System.out.println("El país de " + nom + " es: "
+                        + direccionMap.get("pais"));
+                System.out.println("La ciudad de " + nom + " es: "
+                        + direccionMap.get("ciudad"));
+                System.out.println("El estado de " + nom + " es: "
+                        + direccionMap.get("estado"));
+            } else{
+                System.out.println(llave + " => " + valor);
+            }
+
         }
 
         System.out.println("======================== java 8");
