@@ -88,8 +88,9 @@ public class EjemploHashMap {
         for (String llave : persona.keySet()){
             Object valor = persona.get(llave);
             if (valor instanceof Map){
-                String nom = (String) persona.get("nombre");
+                String nom = (String) persona.get("nombre"); // Crear una variable constante para nombre
                 Map<String, String> direccionMap = (Map<String, String>) valor;
+                // Imprimir mediante la variable y texto los valores deseados del get()
                 System.out.println("El país de " + nom + " es: "
                         + direccionMap.get("pais"));
                 System.out.println("La ciudad de " + nom + " es: "
