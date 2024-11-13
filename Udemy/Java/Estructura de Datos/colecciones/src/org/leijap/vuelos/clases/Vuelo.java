@@ -2,24 +2,22 @@ package org.leijap.vuelos.clases;
 
 import java.util.Date;
 
-public class Vuelo implements Comparable<Vuelo> {
+public class Vuelo {
     // Atributos
     private String nombre;
     private String origen;
     private String destino;
-    private Date fecha;
+    private Date fechaYHora;
     private int pasajeros;
 
     // Métodos
-
-    public Vuelo(String nombre, String origen, String destino, Date fecha, int pasajeros) {
+    public Vuelo(String nombre, String origen, String destino, Date fechaYHora, int pasajeros) {
         this.nombre = nombre;
         this.origen = origen;
         this.destino = destino;
-        this.fecha = fecha;
+        this.fechaYHora = fechaYHora;
         this.pasajeros = pasajeros;
     }
-
 
     public String getNombre() {
         return nombre;
@@ -45,14 +43,6 @@ public class Vuelo implements Comparable<Vuelo> {
         this.destino = destino;
     }
 
-    public Date getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(Date fecha) {
-        this.fecha = fecha;
-    }
-
     public int getPasajeros() {
         return pasajeros;
     }
@@ -61,8 +51,21 @@ public class Vuelo implements Comparable<Vuelo> {
         this.pasajeros = pasajeros;
     }
 
+    public Date getFechaYHora() {
+        return fechaYHora;
+    }
+
+    public void setFechaYHora(Date fechaYHora) {
+        this.fechaYHora = fechaYHora;
+    }
+
     @Override
-    public int compareTo(Vuelo o) {
-        return 0;
+    public String toString() {
+        return "Vuelo: " +
+                "nombre = '" + nombre + '\'' +
+                ", origen = '" + origen + '\'' +
+                ", destino = '" + destino + '\'' +
+                ", fecha y hora = " + fechaYHora +
+                ", pasajeros = " + pasajeros;
     }
 }
