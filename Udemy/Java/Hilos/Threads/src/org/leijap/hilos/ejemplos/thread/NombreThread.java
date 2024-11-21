@@ -17,5 +17,7 @@ public class NombreThread extends Thread {
             }
             System.out.println(getName());
         }
+
+        System.out.println("Finalizó el método run del hilo.");
     }
 }
