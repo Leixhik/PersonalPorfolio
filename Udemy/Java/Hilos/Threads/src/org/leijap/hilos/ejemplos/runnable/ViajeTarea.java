@@ -1,5 +1,7 @@
 package org.leijap.hilos.ejemplos.runnable;
 
+import org.w3c.dom.ls.LSOutput;
+
 public class ViajeTarea implements Runnable {
     private String nombre;
 
@@ -13,13 +15,7 @@ public class ViajeTarea implements Runnable {
 
     @Override
     public void run() {
-        for (int i = 0; i < 10; i++) {
-            System.out.println(i + " - " + nombre); //<- Mostrar el numero de ciclo + nombre del constructor
-        }
-        try {
-            Thread.sleep((long)(Math.random() * 1000)); //<-- Convierte el tipo de dato double a long y hace un random de 1000
-        } catch (InterruptedException e) {
-            e.printStackTrace(); //<-- Muestra el error más simplificado.
-        }
+        System.out.println("Finalmente me voy de viaje a: " + nombre);
     }
+
 }
