@@ -15,7 +15,6 @@ public class ViajeTarea implements Runnable {
 
     @Override
     public void run() {
-        System.out.println("Finalmente me voy de viaje a: " + nombre);
     }
 
 }
