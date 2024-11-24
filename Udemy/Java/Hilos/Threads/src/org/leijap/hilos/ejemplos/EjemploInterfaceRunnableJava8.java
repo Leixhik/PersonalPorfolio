@@ -38,7 +38,6 @@ public class EjemploInterfaceRunnableJava8 {
         v3.join();
         v4.join();
 
-
         //Thread.sleep(10000);
         System.out.println("Continuando con la ejecución del método main: " + main.getName());
     }
