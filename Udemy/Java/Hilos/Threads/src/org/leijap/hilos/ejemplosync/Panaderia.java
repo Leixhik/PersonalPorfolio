@@ -7,7 +7,7 @@ public class Panaderia {
     /* Mientras haya pan disponible (es decir, disponible es true), el panadero espera.
     Esto evita que el panadero hornee nuevo pan si ya hay uno listo.*/
     public synchronized void hornear(String masa){
-        while(disponible){
+        while(disponible){ //<- false
             try {
                 wait(); //el hilo del panadero se suspende hasta que otro hilo lo notifique.
             } catch (InterruptedException e) {
@@ -24,7 +24,7 @@ public class Panaderia {
 
     //Mientras no haya pan disponible (es decir, disponible es false), el cliente espera.
     public synchronized String consumir(){
-        while(!disponible){
+        while(!disponible){ //<- true
             try {
                 wait(); /*El cliente se suspende hasta que el panadero notifique que hay nuevo pan.*/
             } catch (InterruptedException e) {
