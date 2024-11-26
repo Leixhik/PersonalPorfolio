@@ -2,7 +2,7 @@ package org.leijap.hilos.ejemplosync;
 
 public class Panaderia {
     private String pan;
-    private boolean disponible;
+    private boolean disponible; // <-- current false
 
     /* Mientras haya pan disponible (es decir, disponible es true), el panadero espera.
     Esto evita que el panadero hornee nuevo pan si ya hay uno listo.*/
