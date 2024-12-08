@@ -14,7 +14,7 @@ public class EjemploSincronizacionThread {
 
     }
 
-    public synchronized static void imprimirFrases(String frase1, String frase2){
+    public synchronized static void imprimirFrases(String frase1, String frase2) {
         System.out.print(frase1);
 
         try {
