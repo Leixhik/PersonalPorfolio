@@ -35,6 +35,7 @@ public class EjemploScheduledExecutorServicePeriodo {
                 contador.getAndDecrement();
             }
         }
+
         System.out.println("Alguna otra tarea en el main ...");
         executor.shutdown();
     }
