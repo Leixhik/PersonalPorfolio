@@ -11,8 +11,10 @@ public class ConexionBaseDatos {
     private static String password = "sasa";
     private static Connection connection;
 
+    // Obtiene una instancia de la conexión a la base de datos
     public static Connection getInstance() throws SQLException {
         if (connection == null || connection.isClosed() ){
+            // Establece una nueva conexión si no existe o está cerrada
             connection = DriverManager.getConnection(url, username, password);
         }
         return connection;

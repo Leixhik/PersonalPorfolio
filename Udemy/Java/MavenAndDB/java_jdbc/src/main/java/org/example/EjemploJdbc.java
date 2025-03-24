@@ -10,9 +10,14 @@ import java.sql.*;
 public class EjemploJdbc {
     public static void main(String[] args) {
         try (Connection conn = ConexionBaseDatos.getInstance()) {
-
+            // Crea una instancia del repositorio de productos
             Repositorio<Producto> repositorio = new ProductoRepositorioImpl();
-            repositorio.listar().forEach(p -> System.out.println(p.getNombre()));
+
+            // Lista todos los productos y los imprime
+            repositorio.listar().forEach(System.out::println);
+
+            // Obtiene un producto por su ID y lo imprime
+            System.out.println(repositorio.porId(2L));
         } catch (SQLException e) {
             e.printStackTrace();
         }

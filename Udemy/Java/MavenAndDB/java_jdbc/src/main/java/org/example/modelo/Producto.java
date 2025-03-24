@@ -8,9 +8,11 @@ public class Producto {
     private Integer precio;
     private Date fechaRegistro;
 
+    // Constructor Vacío
     public Producto() {
     }
 
+    // Constructor con parámetros
     public Producto(Long id, String nombre, Integer precio, Date fechaRegistro) {
         this.id = id;
         this.nombre = nombre;
@@ -18,6 +20,7 @@ public class Producto {
         this.fechaRegistro = fechaRegistro;
     }
 
+    // Métodos getter y setter para los atributos de la clase
     public Long getId() {
         return id;
     }
@@ -48,5 +51,17 @@ public class Producto {
 
     public void setFechaRegistro(Date fechaRegistro) {
         this.fechaRegistro = fechaRegistro;
+    }
+
+    // Metodo toString para mostrar el objeto como una cadena
+    @Override
+    public String toString() {
+        return  id +
+                " | " +
+                nombre +
+                " | " +
+                precio +
+                " | " +
+                fechaRegistro;
     }
 }
