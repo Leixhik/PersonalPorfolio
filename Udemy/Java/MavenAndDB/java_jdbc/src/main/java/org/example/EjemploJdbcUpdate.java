@@ -5,9 +5,11 @@ import org.example.repositorio.ProductoRepositorioImpl;
 import org.example.repositorio.Repositorio;
 import org.example.util.ConexionBaseDatos;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.SQLException;
 
-public class EjemploJdbc {
+public class EjemploJdbcUpdate {
     public static void main(String[] args) {
         try (Connection conn = ConexionBaseDatos.getInstance()) {
             // Crea una instancia del repositorio de productos
@@ -21,18 +23,20 @@ public class EjemploJdbc {
             System.out.println("======================= obtener por ID =======================");
 
             // Obtiene un producto por su ID y lo imprime
-            System.out.println(repositorio.porId(2L));
+            System.out.println(repositorio.porId(1L));
 
-            System.out.println("======================= obtener por ID =======================");
+            System.out.println("======================= editar nuevo producto =======================");
 
             Producto producto = new Producto();
-            producto.setNombre("Teclado Mecánico");
-            producto.setPrecio(500);
-            producto.setFechaRegistro(new Date(System.currentTimeMillis()));
+
+            producto.setId(3L);
+            producto.setNombre("Teclado Razer Mecánico");
+            producto.setPrecio(700);
             repositorio.guardar(producto);
-            System.out.println("Producto guardado con éxito");
+            System.out.println("Producto actualizado con éxito");
             // Volver a listar...
             repositorio.listar().forEach(System.out::println);
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
